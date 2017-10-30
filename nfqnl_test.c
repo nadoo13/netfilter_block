@@ -137,7 +137,6 @@ static int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,
 			printf("%s\n",host_name);
 			if(!strncmp(host_name,block_host,host_len)) {
 				printf("blocked host\n");
-				sleep(1);
 				return nfq_set_verdict(qh,id,NF_DROP,0,NULL);
 			}
 		}
